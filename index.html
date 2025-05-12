@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskSort</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="content">
+        <h1>Gerenciador de Tarefas</h1>
+        <div class="task-name">
+            <input type="text" id="nameTask" placeholder="nome da tarefa">
+        </div>
+
+        <div class="task-category">
+            <h2>Categoria</h2>
+            <select id="categoryTask" name="category">
+                <option>Estudos</option>
+                <option>Casa</option>
+                <option>Trabalho</option>
+            </select>
+        </div>
+
+        <div class="task-priority">
+            <h2>Prioridade da atividade</h2>
+            <select id="priorityTask" name="priority">
+                <option>Baixa</option>
+                <option>Média</option>
+                <option>Alta</option>
+            </select>
+        </div>
+
+        <div class="task-button">
+            <button id="buttonTask">Adicionar Tarefa</button>
+        </div>
+
+        <div class="task-list">
+            <ul id="taskView"></ul>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
