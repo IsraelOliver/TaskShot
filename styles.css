@@ -91,5 +91,11 @@ h1 {
     background: #fff;
     font-weight: bold;
     margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.task-list li button {
+
 }
 
