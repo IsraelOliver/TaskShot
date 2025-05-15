@@ -8,6 +8,7 @@ let taskList = [];
 
 function addTask() {
     let task = {
+        id: Date.now(),
         nomeTask: nameTask.value,
         categoria: category.value,
         prioridade: priority.value
@@ -32,7 +33,11 @@ function addTask() {
         newLiElement.textContent = task.nomeTask + " 🢒 " + task.categoria;
 
         buttonClose.addEventListener("click", () => {
+            let searchId = Number(newLiElement.dataset.id);
+            let objRemove = taskList.findIndex(task => task.id === searchId);
+
             taskView.removeChild(newLiElement);
+            taskList.splice(objRemove, 1);
         })
 
         newLiElement.appendChild(buttonClose); // adiciona o botão dentro da li
