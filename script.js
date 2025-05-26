@@ -6,6 +6,22 @@ let buttonTask = document.getElementById("buttonTask");
 //Criação do array
 let taskList = [];
 
+function colorPriority(task, element) {
+    if (task.prioridade == "Baixa") {
+        element.style.backgroundColor = "#beff98";
+    }
+
+    if (task.prioridade == "Média") {
+        element.style.backgroundColor = "#113242";
+        element.style.color = "white";
+        element.style.borderColor = "white";
+    }
+
+    if (task.prioridade == "Alta") {
+        element.style.backgroundColor = "#6e0b0b";
+    }
+}
+
 function addTask() {
     let task = {
         id: Date.now(),
@@ -26,14 +42,17 @@ function addTask() {
     taskList.forEach(task => {
         //Criando elementos
         let newLiElement = document.createElement("li");
-        let buttonClose = document.createElement("button.closeButton");
+        let buttonClose = document.createElement("button");
+        buttonClose.classList.add("closeButton");
+        newLiElement.dataset.id = task.id;
+
 
         //Adicionando conteudo aos elementos
         buttonClose.textContent = "Excluir";
         newLiElement.textContent = task.nomeTask + " 🢒 " + task.categoria;
 
         buttonClose.addEventListener("click", () => {
-            let searchId = Number(newLiElement.dataset.id);
+            let searchId = Number(newLiElement.dataset.id); //
             let objRemove = taskList.findIndex(task => task.id === searchId);
 
             taskView.removeChild(newLiElement);
@@ -45,19 +64,7 @@ function addTask() {
 
 
         //Condições de prioridades por cores
-        if (task.prioridade == "Baixa") {
-            newLiElement.style.backgroundColor = "#beff98";
-        }
-
-        if (task.prioridade == "Média") {
-            newLiElement.style.backgroundColor = "#113242";
-            newLiElement.style.color = "white";
-            newLiElement.style.borderColor = "white";
-        }
-
-        if (task.prioridade == "Alta") {
-            newLiElement.style.backgroundColor = "#6e0b0b";
-        }
+        colorPriority(task, newLiElement);
     });
 
     console.log(task);

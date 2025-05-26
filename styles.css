@@ -8,12 +8,28 @@ body {
     background: #cfcfcf;
 }
 
-.content {
-    text-align: center;
+.navigate {
+    background: #231f20;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+    color: #fff;
 }
 
-h1 {
-    padding: 25px 0;
+.navMenu a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 15px;
+    padding: 0 10px;
+    font-weight: bold;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 1em 5em;
 }
 
 .task-name {
@@ -73,13 +89,16 @@ h1 {
     color: #fff;
 }
 
+.verticalLine {
+    border-left: 2px solid #000;
+}
+
 .task-list {
     display: flex;
     justify-content: center;
 }
 
 .task-list ul {
-    border-top: 2px solid #000;
     padding: 0 20px;
 }
 

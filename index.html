@@ -8,40 +8,50 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="content">
+    <nav class="navigate">
         <h1>Gerenciador de Tarefas</h1>
-        <div class="task-name">
-            <input type="text" id="nameTask" placeholder="nome da tarefa">
+        <div class="navMenu">
+            <a href="#">CONCLUÍDAS</a>
+            <a href="#">PARA FAZER</a>
         </div>
+    </nav>
+    <div class="content">
+        <div class="taskInput">
+            <div class="task-name">
+                <input type="text" id="nameTask" placeholder="nome da tarefa">
+            </div>
 
-        <div class="task-category">
-            <h2>Categoria</h2>
-            <select id="categoryTask" name="category">
-                <option disabled selected>Selecionar</option>
-                <option>Estudos</option>
-                <option>Casa</option>
-                <option>Trabalho</option>
-            </select>
+            <div class="task-category">
+                <h2>Categoria</h2>
+                <select id="categoryTask" name="category">
+                    <option disabled selected>Selecionar</option>
+                    <option>Estudos</option>
+                    <option>Casa</option>
+                    <option>Trabalho</option>
+                </select>
+            </div>
+
+            <div class="task-priority">
+                <h2>Prioridade da atividade</h2>
+                <select id="priorityTask" name="priority">
+                    <option disabled selected>Selecionar</option>
+                    <option>Baixa</option>
+                    <option>Média</option>
+                    <option>Alta</option>
+                </select>
+            </div>
+
+            <div class="task-button">
+                <button id="buttonTask">Adicionar Tarefa</button>
+            </div>
         </div>
-
-        <div class="task-priority">
-            <h2>Prioridade da atividade</h2>
-            <select id="priorityTask" name="priority">
-                <option disabled selected>Selecionar</option>
-                <option>Baixa</option>
-                <option>Média</option>
-                <option>Alta</option>
-            </select>
-        </div>
-
-        <div class="task-button">
-            <button id="buttonTask">Adicionar Tarefa</button>
-        </div>
-
-        <div class="task-list">
-            <ul id="taskView">
-                <li>Exemplo</li>
-            </ul>
+        <div class="verticalLine"></div>
+        <div class="taskContent">
+            <div class="task-list">
+                <ul id="taskView">
+                    <li>Exemplo</li>
+                </ul>
+            </div>
         </div>
     </div>
     <script src="./script.js"></script>
