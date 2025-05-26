@@ -6,6 +6,7 @@ let buttonTask = document.getElementById("buttonTask");
 //Criação do array
 let taskList = [];
 
+//Condições de prioridades por cores
 function colorPriority(task, element) {
     if (task.prioridade == "Baixa") {
         element.style.backgroundColor = "#beff98";
@@ -22,6 +23,10 @@ function colorPriority(task, element) {
     }
 }
 
+function taskValidation(task) {
+    return (task.categoria !== "Selecionar" && task.categoria !== "" && task.prioridade !== "Selecionar" && task.prioridade !== "")
+}
+
 function addTask() {
     let task = {
         id: Date.now(),
@@ -30,9 +35,7 @@ function addTask() {
         prioridade: priority.value
     }
 
-    if (task.categoria == "Selecionar" || task.categoria == "" || task.prioridade == "Selecionar" || task.categoria == "" ) {
-        return
-    }
+    if (!taskValidation(task)) return;
 
     let taskView = document.getElementById("taskView");
     taskView.textContent = ""
@@ -62,8 +65,6 @@ function addTask() {
         newLiElement.appendChild(buttonClose); // adiciona o botão dentro da li
         taskView.appendChild(newLiElement); // desenha a li na tela
 
-
-        //Condições de prioridades por cores
         colorPriority(task, newLiElement);
     });
 
