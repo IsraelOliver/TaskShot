@@ -1,4 +1,12 @@
 PROXIMAS TAREFAS PARA ESTE PROJETO.
 
-    - Transformar todo o layout para GRID.
-    - Colocar as task para localStorage.
+    - Salvar tarefas no localStorage
+    - Marcar tarefas como concluídas
+    - Mudar botão de excluir
+    - Animações para adicionar/remover tarefas
+    - Botão de modo escuro (Dark Mode Toggle)
+    - Filtro de tarefas (todas / feitas / pendentes)
+    - Editar tarefa com duplo clique
+    - Responsividade com media queries
+
+    + Reescrita modular do JS (nível mais avançado)
