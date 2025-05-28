@@ -23,8 +23,12 @@ function colorPriority(task, element) {
     }
 }
 
+//Validação dos elementos "SELECT"
 function taskValidation(task) {
-    return (task.categoria !== "Selecionar" && task.categoria !== "" && task.prioridade !== "Selecionar" && task.prioridade !== "")
+    return (task.categoria !== "Selecionar" &&
+        task.categoria !== "" &&
+        task.prioridade !== "Selecionar" &&
+        task.prioridade !== "")
 }
 
 function addTask() {
@@ -48,7 +52,6 @@ function addTask() {
         let buttonClose = document.createElement("button");
         buttonClose.classList.add("closeButton");
         newLiElement.dataset.id = task.id;
-
 
         //Adicionando conteudo aos elementos
         buttonClose.textContent = "Excluir";
