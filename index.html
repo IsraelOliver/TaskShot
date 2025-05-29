@@ -9,15 +9,18 @@
 </head>
 <body>
     <div class="grid">
-        <nav class="navigate">
+        <div></div> <!-- Div de uma barra lateral -->
+
+        <nav class="navigate"> <!-- Esse vai virar um bloco da grid -->
             <h1>Gerenciador de Tarefas</h1>
             <div class="navMenu">
                 <a href="#">CONCLUÍDAS</a>
                 <a href="#">PARA FAZER</a>
             </div>
         </nav>
-        <div class="content">
-            <div class="taskInput">
+        <div class="content"> <!-- Esse vai sair -->
+
+            <div class="taskInput"> <!-- Esse vai virar um bloco da grid -->
                 <div class="container">
                     <div class="task-name">
                         <input type="text" id="nameTask" placeholder="nome da tarefa">
@@ -48,15 +51,19 @@
                     </div>
                 </div>
             </div>
+
+            <div></div> <!-- Div de um calendario -->
             
-            <div class="verticalLine"></div>
-            <div class="taskContent">
+            <div class="verticalLine"></div> <!-- Esse vai sumir -->
+
+            <div class="taskContent"> <!-- Esse aqui virara um bloco da grid -->
                 <div class="task-list">
-                    <ul id="taskView">
-                        <li>Exemplo</li>
+                    <ul id="taskView"> 
                     </ul>
                 </div>
             </div>
+
+            <div></div> <!-- Div de tarefas para terminar -->
         </div>
     </div>
     <script src="./script.js"></script>
