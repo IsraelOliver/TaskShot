@@ -10,15 +10,15 @@ body {
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(11, 1fr);
     grid-column-gap: 20px;
     grid-row-gap: 20px;
     padding: 20px;
 }
 
 .sideBar {
-    grid-area: 1 / 1 / 4 / 2;
+    grid-area: 1 / 1 / 13 / 4;
     background: #fff;
     border-radius: 30px;
     text-align: center;
@@ -30,23 +30,56 @@ body {
 .search {
     background: #fff;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    padding: 10px 0;
-    grid-area: 1 / 2 / 2 / 5;
+    border-radius: 30px;
+    padding: 0px 20px;
+    grid-area: 1 / 4 / 3 / 13;
 }
 
-.navMenu a {
+.search input {
+    border: none;
+    border-radius: 10px;
+    width: 20em;
+    background: #f5f2f1;
+    padding: 10px 20px;
+}
+
+.buttonsSearch a, i {
     text-decoration: none;
-    color: #fff;
+    color: #000000;
     font-size: 15px;
-    padding: 0 10px;
     font-weight: bold;
+}
+
+#iconMais {
+    font-size: 15px;
+}
+
+.buttonsSearch a{
+    border: 2px solid #000;
+    padding: 10px 20px;
+    border-radius: 15px;
+    transition: .5s;
+    color: #c79d15;
+}
+
+.buttonsSearch a:hover {
+    border: 2px solid #000;
+    color: #fff;
+    background: #000;
+    padding: 10px 20px;
+    border-radius: 15px;
+}
+
+#iconEmail {
+    font-size: 25px;
+    padding: 10px 20px;
 }
 
 .taskInput {
     border-radius: 30px;
-    grid-area: 2 / 2 / 3 / 3;
+    grid-area: 3 / 4 / 8 / 7;
     background: #fff;
     text-align: center;
     padding: 30px;
@@ -112,13 +145,13 @@ body {
 .calendar {
     border-radius: 30px;
     background: #fff;
-    grid-area: 3 / 2 / 4 / 3;
+    grid-area: 8 / 4 / 13 / 7;
 }
 
 .taskContent {
     border-radius: 30px;
     background: #fff;
-    grid-area: 2 / 3 / 3 / 4;
+    grid-area: 3 / 7 / 8 / 11;
 }
 
 .task-list {
@@ -145,17 +178,17 @@ body {
 .toFinish {
     border-radius: 30px;
     background: #fff;
-    grid-area: 3 / 3 / 4 / 4;
+    grid-area: 8 / 7 / 13 / 11;
 }
 
 .comments {
     border-radius: 30px;
     background: #fff;
-    grid-area: 2 / 4 / 3 / 5;
+    grid-area: 3 / 11 / 8 / 13;
 }
 
 .newWidgets {
     border-radius: 30px;
     background: #fff;
-    grid-area: 3 / 4 / 4 / 5;
+    grid-area: 8 / 11 / 13 / 13;
 }
