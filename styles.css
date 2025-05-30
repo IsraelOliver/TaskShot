@@ -12,15 +12,22 @@ body {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    padding: 20px;
 }
 
 .sideBar {
     grid-area: 1 / 1 / 4 / 2;
+    background: #fff;
+    border-radius: 30px;
+    text-align: center;
+}
+.sideBar h1 {
+    margin: 10px 0;
 }
 
-.navigate {
+.search {
     background: #fff;
     display: flex;
     justify-content: space-around;
@@ -38,13 +45,11 @@ body {
 }
 
 .taskInput {
-    grid-area: 2 / 2 / 3 / 3;
-}
-
-.container {
     border-radius: 30px;
-    padding: 30px;
+    grid-area: 2 / 2 / 3 / 3;
     background: #fff;
+    text-align: center;
+    padding: 30px;
 }
 
 .task-name {
@@ -105,10 +110,14 @@ body {
 }
 
 .calendar {
+    border-radius: 30px;
+    background: #fff;
     grid-area: 3 / 2 / 4 / 3;
 }
 
 .taskContent {
+    border-radius: 30px;
+    background: #fff;
     grid-area: 2 / 3 / 3 / 4;
 }
 
@@ -134,13 +143,19 @@ body {
 }
 
 .toFinish {
+    border-radius: 30px;
+    background: #fff;
     grid-area: 3 / 3 / 4 / 4;
 }
 
 .comments {
+    border-radius: 30px;
+    background: #fff;
     grid-area: 2 / 4 / 3 / 5;
 }
 
 .newWidgets {
+    border-radius: 30px;
+    background: #fff;
     grid-area: 3 / 4 / 4 / 5;
 }
