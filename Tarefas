@@ -10,6 +10,7 @@ PROXIMAS TAREFAS PARA ESTE PROJETO.
     - Editar tarefa com duplo clique
     - Responsividade com media queries
 
+    + Decidir um novo layout, em grid ou flexbox ou em outra coisa. (VERY IMPORTANTE)
     + Reescrita modular do JS (nível mais avançado) (EM ANDAMENTO)
     + Reescrita modular do CSS:
         - Separar o css em arquivos menores
