@@ -2,6 +2,7 @@ PROXIMAS TAREFAS PARA ESTE PROJETO.
 
     - Salvar tarefas no localStorage
     - Marcar tarefas como concluídas
+    - Fazer o formulario de adicionar tarefa em um modal
     - Mudar botão de excluir
     - Animações para adicionar/remover tarefas
     - Botão de modo escuro (Dark Mode Toggle)

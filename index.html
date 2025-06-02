@@ -19,41 +19,48 @@
                 <input type="search" id="site-search" placeholder="Procurar">
             </div>
             <div class="buttonsSearch">
-                <a href="#"><i id="iconMais" class="fa-solid fa-plus"></i> TAREFA</a>
+                <a href="#" id="addTask" ><i id="iconMais" class="fa-solid fa-plus"></i> TAREFA</a>
                 <i id="iconEmail" class="fa-regular fa-envelope"></i>
             </div>
         </div>
 
-        <div class="taskInput">
+        <div id="myModal" class="modal">
+            <div class="modalConteudo">
+                <span class="fechar">&times;</span>
+                    <div class="taskInput">
             
-            <div class="task-name">
-                <input type="text" id="nameTask" placeholder="nome da tarefa">
-            </div>
+                        <div class="task-name">
+                            <input type="text" id="nameTask" placeholder="nome da tarefa">
+                        </div>
 
-            <div class="task-category">
-                <h2>Categoria</h2>
-                <select id="categoryTask" name="category">
-                    <option disabled selected>Selecionar</option>
-                    <option>Estudos</option>
-                    <option>Casa</option>
-                    <option>Trabalho</option>
-                </select>
-            </div>
+                        <div class="task-category">
+                            <h2>Categoria</h2>
+                            <select id="categoryTask" name="category">
+                                <option disabled selected>Selecionar</option>
+                                <option>Estudos</option>
+                                <option>Casa</option>
+                                <option>Trabalho</option>
+                            </select>
+                        </div>
 
-            <div class="task-priority">
-                <h2>Prioridade da atividade</h2>
-                <select id="priorityTask" name="priority">
-                    <option disabled selected>Selecionar</option>
-                    <option>Baixa</option>
-                    <option>Média</option>
-                    <option>Alta</option>
-                </select>
-            </div>
+                        <div class="task-priority">
+                            <h2>Prioridade da atividade</h2>
+                            <select id="priorityTask" name="priority">
+                                <option disabled selected>Selecionar</option>
+                                <option>Baixa</option>
+                                <option>Média</option>
+                                <option>Alta</option>
+                            </select>
+                        </div>
 
-            <div class="task-button">
-                <button id="buttonTask">Adicionar Tarefa</button>
+                        <div class="task-button">
+                            <button id="buttonTask">Adicionar Tarefa</button>
+                        </div>
+                    </div>
             </div>
         </div>
+
+        <div class="aindaNaoSei"></div>
 
         <div class="calendar"></div> 
 

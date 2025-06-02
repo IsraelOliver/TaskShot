@@ -3,6 +3,25 @@ let category = document.getElementById("categoryTask");
 let priority = document.getElementById("priorityTask");
 let buttonTask = document.getElementById("buttonTask");
 
+//Modal
+let modal = document.getElementById("myModal");
+let addTask = document.getElementById("addTask");
+let closeTask = document.querySelector(".fechar");
+
+addTask.onclick = () => {
+    modal.style.display = "block";
+}
+
+closeTask.onclick = () => {
+  modal.style.display = "none";
+};
+
+window.onclick = (evento) => {
+  if (evento.target === modal) {
+    modal.style.display = "none";
+  }
+};
+
 //Criação do array
 let taskList = [];
 
@@ -31,7 +50,7 @@ function taskValidation(task) {
         task.prioridade !== "")
 }
 
-function addTask() {
+function createTask() {
     let task = {
         id: Date.now(),
         nomeTask: nameTask.value,
@@ -69,6 +88,8 @@ function addTask() {
         taskView.appendChild(newLiElement); // desenha a li na tela
 
         colorPriority(task, newLiElement);
+        
+        modal.style.display = "none";
     });
 
     console.log(task);
@@ -81,4 +102,4 @@ function addTask() {
 
 }
 
-buttonTask.addEventListener("click", addTask);
+buttonTask.addEventListener("click", createTask);
