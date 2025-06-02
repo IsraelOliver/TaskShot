@@ -92,7 +92,7 @@ body {
   border-radius: 8px;
 }
 
-.fechar {
+.close {
   float: right;
   cursor: pointer;
 }

@@ -6,7 +6,7 @@ let buttonTask = document.getElementById("buttonTask");
 //Modal
 let modal = document.getElementById("myModal");
 let addTask = document.getElementById("addTask");
-let closeTask = document.querySelector(".fechar");
+let closeTask = document.querySelector(".close");
 
 addTask.onclick = () => {
     modal.style.display = "block";
@@ -88,7 +88,7 @@ function createTask() {
         taskView.appendChild(newLiElement); // desenha a li na tela
 
         colorPriority(task, newLiElement);
-        
+
         modal.style.display = "none";
     });
 
