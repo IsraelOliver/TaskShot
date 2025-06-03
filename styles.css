@@ -5,75 +5,98 @@
 }
 
 body {
-    background: #f5f2f1;
+    background: #1e1e1e;
 }
 
 .grid {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(11, 1fr);
-    grid-column-gap: 20px;
-    grid-row-gap: 20px;
-    padding: 20px;
+    background: #1e1e1e;
 }
 
-.sideBar {
-    grid-area: 1 / 1 / 13 / 4;
-    background: #fff;
-    border-radius: 30px;
+.sidebar {
+    background: #262626;
     text-align: center;
+    position: fixed;
+    width: 0;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    transition: .4s;
+    z-index: 1000;
+    height: 100vh;
+    color: #fff;
 }
-.sideBar h1 {
+
+.sidebar.open {
+    width: 250px;
+    overflow: visible;
+}
+
+.sidebar h1 {
     margin: 10px 0;
 }
 
-.search {
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
     background: #fff;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-radius: 30px;
-    padding: 0px 20px;
-    grid-area: 1 / 4 / 3 / 13;
+    height: 60px;
+    width: 100%;
+    transition: margin-left 0.3s, width 0.3s;
+    z-index: 999;
 }
 
-.search input {
+.header.shifted {
+  margin-left: 250px;
+  width: calc(100% - 250px);
+}
+
+.header input {
     border: none;
     border-radius: 10px;
     width: 20em;
     background: #f5f2f1;
     padding: 10px 20px;
-}
-
-.buttonsSearch a, i {
-    text-decoration: none;
-    color: #c79d15;
-    font-size: 15px;
-    font-weight: bold;
+    margin: 0 20px;
 }
 
 #iconMais {
     font-size: 15px;
 }
 
-.buttonsSearch a{
-    border: 2px solid #000;
+.search {
+    padding: 0 1em;
+}
+
+.buttonsHeader {
+    padding: 0 1em;
+}
+
+.buttonsHeader a, i {
+    text-decoration: none;
+    color: #000000;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+.buttonsHeader a{
+    background: #f5f2f1;
     padding: 10px 20px;
     border-radius: 15px;
     transition: .5s;
-    color: #000000;
 }
 
-.buttonsSearch a:hover {
-    border: 2px solid #000;
+.buttonsHeader a:hover {
     background: #c79d15;
-    padding: 10px 20px;
     border-radius: 15px;
 }
 
 #iconEmail {
     font-size: 25px;
-    padding: 10px 20px;
 }
 
 .modal {
@@ -162,7 +185,6 @@ body {
 }
 
 .aindaNaoSei {
-    grid-area: 3 / 4 / 8 / 7;
     background: #fff;
     border-radius: 30px;
 }
@@ -170,13 +192,11 @@ body {
 .calendar {
     border-radius: 30px;
     background: #fff;
-    grid-area: 8 / 4 / 13 / 7;
 }
 
 .taskContent {
     border-radius: 30px;
     background: #fff;
-    grid-area: 3 / 7 / 8 / 11;
 }
 
 .task-list {
@@ -203,17 +223,14 @@ body {
 .toFinish {
     border-radius: 30px;
     background: #fff;
-    grid-area: 8 / 7 / 13 / 11;
 }
 
 .comments {
     border-radius: 30px;
     background: #fff;
-    grid-area: 3 / 11 / 8 / 13;
 }
 
 .newWidgets {
     border-radius: 30px;
     background: #fff;
-    grid-area: 8 / 11 / 13 / 13;
 }

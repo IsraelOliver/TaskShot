@@ -8,6 +8,17 @@ let modal = document.getElementById("myModal");
 let addTask = document.getElementById("addTask");
 let closeTask = document.querySelector(".close");
 
+//Sidebar
+let toggleButton = document.getElementById("toggleButton");
+let sidebar = document.querySelector(".sidebar");
+let header = document.querySelector(".search");
+
+toggleButton.addEventListener('click', () => {
+    sidebar.classList.toggle('open');
+    header.classList.toggle('shifted');
+});
+
+
 addTask.onclick = () => {
     modal.style.display = "block";
 }

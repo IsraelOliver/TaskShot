@@ -2,19 +2,18 @@ PROXIMAS TAREFAS PARA ESTE PROJETO.
 
     - Salvar tarefas no localStorage
     - Marcar tarefas como concluídas
-    - Fazer o formulario de adicionar tarefa em um modal (FEITO)
-    - Mudar botão de excluir
+    - Fazer o formulario de adicionar tarefa em um modal (CONCLUÍDO)
     - Animações para adicionar/remover tarefas
     - Botão de modo escuro (Dark Mode Toggle)
     - Filtro de tarefas (todas / feitas / pendentes)
     - Editar tarefa com duplo clique
     - Responsividade com media queries
 
-    + Decidir um novo layout, em grid ou flexbox ou em outra coisa. (VERY IMPORTANTE)
+    + Decidir um novo layout, em grid ou flexbox ou em outra coisa. (IMPORTANTE)
     + Reescrita modular do JS (nível mais avançado) (EM ANDAMENTO)
     + Reescrita modular do CSS:
         - Separar o css em arquivos menores
         - Usar uma metodologia de nomenclatura BEM
         - Evitar seletores genéricos ou muito profundos
         - Usar variáveis CSS (Custom Properties)
-        -  Utilizar pré-processadores (opcional) - futuramente talvez
+        - Utilizar pré-processadores (opcional) - futuramente talvez
