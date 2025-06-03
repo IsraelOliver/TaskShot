@@ -11,7 +11,7 @@ let closeTask = document.querySelector(".close");
 //Sidebar
 let toggleButton = document.getElementById("toggleButton");
 let sidebar = document.querySelector(".sidebar");
-let header = document.querySelector(".search");
+let header = document.querySelector(".header");
 
 toggleButton.addEventListener('click', () => {
     sidebar.classList.toggle('open');
@@ -19,6 +19,7 @@ toggleButton.addEventListener('click', () => {
 });
 
 
+// Model para adicionar tarefa
 addTask.onclick = () => {
     modal.style.display = "block";
 }
@@ -33,7 +34,7 @@ window.onclick = (evento) => {
   }
 };
 
-//Criação do array
+//Criação da tarefa
 let taskList = [];
 
 //Condições de prioridades por cores
