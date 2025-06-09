@@ -13,10 +13,12 @@ let closeTask = document.querySelector(".close");
 let toggleButton = document.getElementById("toggleButton");
 let sidebar = document.querySelector(".sidebar");
 let header = document.querySelector(".header");
+let taskContent = document.querySelector(".taskContent")
 
 toggleButton.addEventListener('click', () => {
     sidebar.classList.toggle('open');
     header.classList.toggle('shifted');
+    taskContent.classList.toggle('shifted');
 });
 
 // Model para adicionar tarefa
