@@ -1,3 +1,4 @@
+//Adicionar tarefa
 let nameTask = document.getElementById("nameTask");
 let category = document.getElementById("categoryTask");
 let priority = document.getElementById("priorityTask");
@@ -17,7 +18,6 @@ toggleButton.addEventListener('click', () => {
     sidebar.classList.toggle('open');
     header.classList.toggle('shifted');
 });
-
 
 // Model para adicionar tarefa
 addTask.onclick = () => {
@@ -62,6 +62,7 @@ function taskValidation(task) {
         task.prioridade !== "")
 }
 
+//Criação da tarefa
 function createTask() {
     let task = {
         id: Date.now(),
@@ -101,11 +102,12 @@ function createTask() {
 
         colorPriority(task, newLiElement);
 
-        modal.style.display = "none";
     });
 
     console.log(task);
     console.log(taskList);
+
+    modal.style.display = "none";
 
     //Limpa os campos
     nameTask.value = "";
