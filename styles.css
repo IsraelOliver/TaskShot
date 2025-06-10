@@ -214,25 +214,30 @@ body {
     text-align: left;
     box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.7);
     color: var(--cor-white);
+    transition: .3s;
+}
+
+#taskView li:hover {
+    border: 1px solid var(--cor-linha);
 }
 
 .trash {
-    float: right;
-    cursor: pointer;
+    margin-top: 6px;
     border: none;
     background: none;
-    height: 13px;
-    width: 13px;
-    fill: var(--cor-linha-second);
-    transition: fill .3s ease;
+    float: right;
+}
+
+.trash i {
+    float: right;
+    cursor: pointer;
+    font-size: 13px;
+    color: var(--cor-linha-second);
+    transition: .3s;
 }
 
 .trash i:hover {
-    fill: var(--cor-linha);
-}
-
-.taskText {
-    font-weight: bold;
+    color: var(--cor-linha);
 }
 
 .task-list.shifted {
