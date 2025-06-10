@@ -192,8 +192,24 @@ body {
 .task-list {
     transition: margin-left .2s, width .2s;
     width: 100%;
-    border-top: 1px solid #000;
     margin-top: 60px;
+}
+
+#taskView {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 30px 10px;
+}
+
+#taskView li {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid var(--cor-linha-second);
+    width: 15rem;
+    margin: 0 10px 15px;
+    text-align: center  ;
 }
 
 .task-list.shifted {

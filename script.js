@@ -48,7 +48,6 @@ function colorPriority(task, element) {
     if (task.prioridade == "Média") {
         element.style.backgroundColor = "#113242";
         element.style.color = "white";
-        element.style.borderColor = "white";
     }
 
     if (task.prioridade == "Alta") {
