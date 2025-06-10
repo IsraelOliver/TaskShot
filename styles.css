@@ -209,7 +209,22 @@ body {
     border: 1px solid var(--cor-linha-second);
     width: 15rem;
     margin: 0 10px 15px;
-    text-align: center  ;
+    text-align: center;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.7);
+}
+
+.trash {
+    float: right;
+    cursor: pointer;
+    border: none;
+    background: none;
+    height: 13px;
+    width: 13px;
+    color: var(--cor-linha-second);
+}
+
+.taskText {
+    font-weight: bold;
 }
 
 .task-list.shifted {

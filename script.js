@@ -83,11 +83,17 @@ function createTask() {
         //Criando elementos
         let newLiElement = document.createElement("li");
         let buttonClose = document.createElement("button");
-        buttonClose.classList.add("closeButton");
+        let trashImg = document.createElement("img");
+
+        buttonClose.classList.add("trash");
+        newLiElement.classList.add("taskText")
         newLiElement.dataset.id = task.id;
 
         //Adicionando conteudo aos elementos
-        buttonClose.textContent = "Excluir";
+        trashImg.src = "./assets/trash.svg";
+        trashImg.alt = "Delete";
+
+        buttonClose.appendChild(trashImg);
         newLiElement.textContent = task.nomeTask + " 🢒 " + task.categoria;
 
         buttonClose.addEventListener("click", () => {
