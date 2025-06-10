@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-Br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,68 +9,65 @@
     <link rel="stylesheet" href="styles.css">
     <script src="https://kit.fontawesome.com/af55004c5b.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-    <div class="grid">
-        <div class="sidebar">
-            <h1>Smiley</h1>
+    <div class="sidebar">
+        <h1>TaskShot</h1>
+    </div>
+
+    <div class="header">
+        <div class="search">
+            <i id="toggleButton" class="fa-solid fa-bars"></i>
+            <input type="search" id="site-search" placeholder="Procurar">
         </div>
-
-        <div class="header">
-            <div class="search">
-                <i id="toggleButton" class="fa-solid fa-bars"></i>
-                <input type="search" id="site-search" placeholder="Procurar">
-            </div>
-            <div class="buttonsHeader">
-                <a href="#" id="addTask" >TAREFA</a>
-                <i id="iconEmail" class="fa-regular fa-envelope"></i>
-            </div>
+        <div class="buttonsHeader">
+            <a href="#" id="addTask">TAREFA</a>
+            <i id="iconEmail" class="fa-regular fa-envelope"></i>
         </div>
+    </div>
 
-        <div id="myModal" class="modal">
-            <div class="modalConteudo">
-                <span class="close">&times;</span>
-                <div class="taskInput">
-            
-                    <div class="task-name">
-                        <input type="text" id="nameTask" placeholder="nome da tarefa">
-                    </div>
+    <div id="myModal" class="modal">
+        <div class="modalConteudo">
+            <span class="close"><i class="fa-solid fa-xmark"></i></span>
+            <div class="taskInput">
 
-                    <div class="task-category">
-                        <h2>Categoria</h2>
-                        <select id="categoryTask" name="category">
-                            <option disabled selected>Selecionar</option>
-                            <option>Estudos</option>
-                            <option>Casa</option>
-                            <option>Trabalho</option>
-                        </select>
-                    </div>
+                <div class="task-name">
+                    <input type="text" id="nameTask" placeholder="nome da tarefa">
+                </div>
 
-                    <div class="task-priority">
-                        <h2>Prioridade da atividade</h2>
-                        <select id="priorityTask" name="priority">
-                            <option disabled selected>Selecionar</option>
-                            <option>Baixa</option>
-                            <option>Média</option>
-                            <option>Alta</option>
-                        </select>
-                    </div>
+                <div class="task-category">
+                    <h2>Categoria</h2>
+                    <select id="categoryTask" name="category">
+                        <option disabled selected>Selecionar</option>
+                        <option>Estudos</option>
+                        <option>Casa</option>
+                        <option>Trabalho</option>
+                    </select>
+                </div>
 
-                    <div class="task-button">
-                        <button id="buttonTask">Adicionar Tarefa</button>
-                    </div>
+                <div class="task-priority">
+                    <h2>Prioridade da atividade</h2>
+                    <select id="priorityTask" name="priority">
+                        <option disabled selected>Selecionar</option>
+                        <option>Baixa</option>
+                        <option>Média</option>
+                        <option>Alta</option>
+                    </select>
+                </div>
+
+                <div class="task-button">
+                    <button id="buttonTask">Adicionar Tarefa</button>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="aindaNaoSei"></div>
-
-        <div class="taskContent"> 
-            <div class="task-list">
-                <ul id="taskView"> 
-                </ul>
-            </div>
-        </div>
+    <div class="task-list">
+        <ul id="taskView">
+            <li>Teste</li>
+        </ul>
     </div>
     <script src="./script.js"></script>
 </body>
+
 </html>

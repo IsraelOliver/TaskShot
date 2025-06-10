@@ -13,7 +13,7 @@ let closeTask = document.querySelector(".close");
 let toggleButton = document.getElementById("toggleButton");
 let sidebar = document.querySelector(".sidebar");
 let header = document.querySelector(".header");
-let taskContent = document.querySelector(".taskContent")
+let taskContent = document.querySelector(".task-list")
 
 toggleButton.addEventListener('click', () => {
     sidebar.classList.toggle('open');

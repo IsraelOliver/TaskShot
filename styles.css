@@ -1,3 +1,13 @@
+:root {
+    --cor-primaria: #1e1e1e;
+    --cor-secundaria: #262626;
+    --cor-detalhe: #de4c4a;
+    --cor-detalhe-second: #472525;
+    --cor-linha: #6b6b6b;
+    --cor-linha-second: #525252;
+    --cor-white: #fff;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,15 +15,11 @@
 }
 
 body {
-    background: #1e1e1e;
-}
-
-.grid {
-    background: #1e1e1e;
+    background: var(--cor-primaria);
 }
 
 .sidebar {
-    background: #262626;
+    background: var(--cor-secundaria);
     text-align: center;
     position: fixed;
     width: 0;
@@ -23,7 +29,7 @@ body {
     transition: .2s;
     z-index: 1000;
     height: 100vh;
-    color: #fff;
+    color: var(--cor-white);
 }
 
 .sidebar.open {
@@ -39,7 +45,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    background: #fff;
+    background: var(--cor-secundaria);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -58,7 +64,7 @@ body {
     border: none;
     border-radius: 10px;
     width: 20em;
-    background: #f5f2f1;
+    background: var(--cor-linha-second);
     padding: 10px 20px;
     margin: 0 20px;
 }
@@ -99,11 +105,11 @@ body {
 }
 
 .modal {
-  display: none; /* escondido por padrão */
+  display: none;
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* fundo escuro */
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .modalConteudo {
@@ -111,7 +117,7 @@ body {
   margin: 15% auto;
   padding: 20px;
   width: 300px;
-  border-radius: 8px;
+  border-radius: 30px;
 }
 
 .close {
@@ -183,36 +189,14 @@ body {
     color: #fff;
 }
 
-.taskContent {
-    background: #fff;
+.task-list {
     transition: margin-left .2s, width .2s;
     width: 100%;
     border-top: 1px solid #000;
     margin-top: 60px;
 }
 
-.taskContent.shifted {
+.task-list.shifted {
     margin-left: 300px;
     width: calc(100% - 300px);
-}
-
-.task-list {
-    display: flex;
-    justify-content: center;
-}
-
-.task-list ul {
-    padding: 0 20px;
-}
-
-.task-list li {
-    list-style: none;
-    padding: 5px 20px;
-    border: 1px solid #000;
-    border-radius: 5px;
-    background: #fff;
-    font-weight: bold;
-    margin: 10px 0;
-    display: flex;
-    flex-direction: column;
 }
