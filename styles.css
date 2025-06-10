@@ -198,6 +198,7 @@ body {
 #taskView {
     display: flex;
     justify-content: flex-start;
+    align-items: flex-start;
     flex-wrap: wrap;
     list-style: none;
     padding: 30px 10px;
@@ -209,7 +210,8 @@ body {
     border: 1px solid var(--cor-linha-second);
     width: 15rem;
     margin: 0 10px 15px;
-    text-align: center;
+    align-items: center;
+    text-align: left;
     box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.7);
 }
 
@@ -220,7 +222,12 @@ body {
     background: none;
     height: 13px;
     width: 13px;
-    color: var(--cor-linha-second);
+    fill: var(--cor-linha-second);
+    transition: fill .3s ease;
+}
+
+.trash:hover {
+    fill: var(--cor-linha);
 }
 
 .taskText {

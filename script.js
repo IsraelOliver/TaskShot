@@ -15,6 +15,18 @@ let sidebar = document.querySelector(".sidebar");
 let header = document.querySelector(".header");
 let taskContent = document.querySelector(".task-list")
 
+// Gerenciador de Icones
+const IconManager = {
+    trash: `
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - 
+        https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+        <path d="M135.2 17.7L128 32 32 32C14.3 32 0 46.3 0 64S14.3 96 32 96l384 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-96
+        0-7.2-14.3C307.4 6.8 296.3 0 284.2 0L163.8 0c-12.1 0-23.2 6.8-28.6 17.7zM416 128L32 128 53.2 467c1.6 25.3 22.6 45 47.9 45l245.8
+        0c25.3 0 46.3-19.7 47.9-45L416 128z"/></svg>
+    `
+}
+
+// Abrir sidebar e empurrar o conteúdo da página!
 toggleButton.addEventListener('click', () => {
     sidebar.classList.toggle('open');
     header.classList.toggle('shifted');
@@ -83,17 +95,13 @@ function createTask() {
         //Criando elementos
         let newLiElement = document.createElement("li");
         let buttonClose = document.createElement("button");
-        let trashImg = document.createElement("img");
 
         buttonClose.classList.add("trash");
         newLiElement.classList.add("taskText")
         newLiElement.dataset.id = task.id;
 
         //Adicionando conteudo aos elementos
-        trashImg.src = "./assets/trash.svg";
-        trashImg.alt = "Delete";
-
-        buttonClose.appendChild(trashImg);
+        buttonClose.innerHTML = IconManager.trash
         newLiElement.textContent = task.nomeTask + " 🢒 " + task.categoria;
 
         buttonClose.addEventListener("click", () => {
@@ -108,7 +116,6 @@ function createTask() {
         taskView.appendChild(newLiElement); // desenha a li na tela
 
         colorPriority(task, newLiElement);
-
     });
 
     console.log(task);
