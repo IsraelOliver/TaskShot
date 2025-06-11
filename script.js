@@ -6,7 +6,7 @@ let buttonTask = document.getElementById("buttonTask");
 
 //Modal
 let modal = document.getElementById("myModal");
-let addTask = document.getElementById("addTask");
+let openTask = document.getElementById("openTask");
 let closeTask = document.querySelector(".close");
 
 //Sidebar
@@ -23,7 +23,7 @@ toggleButton.addEventListener('click', () => {
 });
 
 // Model para adicionar tarefa
-addTask.onclick = () => {
+openTask.onclick = () => {
     modal.style.display = "block";
 }
 
@@ -37,8 +37,8 @@ window.onclick = (evento) => {
   }
 };
 
-//Criação da tarefa
-let taskList = [];
+// ---- DIVISÃO ---- //
+// ---- DIVISÃO ---- //
 
 //Condições de prioridades por cores
 function colorPriority(task, element) {
@@ -63,6 +63,64 @@ function taskValidation(task) {
         task.prioridade !== "")
 }
 
+//Criação de um array vazio
+let taskList = [];
+
+// ---- DIVISÃO ---- //
+// ---- DIVISÃO ---- //
+
+function loadTasks() {
+    let saved = localStorage.getItem("taskList");
+    if (saved) {
+        taskList = JSON.parse(saved);
+        renderTasks();
+    }
+}
+
+function saveTasks() {
+    localStorage.setItem("taskList", JSON.stringify(taskList));
+}
+
+function renderTasks() {
+    let taskView = document.getElementById("taskView");
+    taskView.textContent = ""
+
+    taskList.forEach(task => {
+        // Criando elementos
+        let newLiElement = document.createElement("li");
+        let buttonClose = document.createElement("button");
+
+        // Adicionando Classes
+        newLiElement.classList.add("taskText")
+        buttonClose.classList.add("trash");
+        newLiElement.dataset.id = task.id;
+        
+        //Adicionando conteudo aos elementos
+        buttonClose.innerHTML = `<i class="fa-solid fa-trash"></i>`;
+        newLiElement.textContent = task.nomeTask + " 🢒 " + task.categoria;
+
+        //Botão de excluir uma tarefa
+        buttonClose.addEventListener("click", () => {
+            let searchId = Number(newLiElement.dataset.id); //
+            let objRemove = taskList.findIndex(task => task.id === searchId);
+
+            taskView.removeChild(newLiElement);
+            taskList.splice(objRemove, 1);
+        })
+        newLiElement.appendChild(buttonClose); // adiciona o botão dentro da li
+
+        taskView.appendChild(newLiElement); // Desenha o novo item da lista (nova tarefa)
+
+        colorPriority(task, newLiElement);
+    });
+}
+
+function addTask(task) {
+    taskList.push(task);
+    saveTasks();
+    renderTasks();
+}
+
 //Criação da tarefa
 function createTask() {
     let task = {
@@ -74,40 +132,7 @@ function createTask() {
 
     if (!taskValidation(task)) return;
 
-    let taskView = document.getElementById("taskView");
-    taskView.textContent = ""
-    
-    taskList.push(task);
-
-    taskList.forEach(task => {
-        //Criando elementos
-        let newLiElement = document.createElement("li");
-        let buttonClose = document.createElement("button");
-
-        buttonClose.classList.add("trash");
-        newLiElement.classList.add("taskText")
-        newLiElement.dataset.id = task.id;
-
-        //Adicionando conteudo aos elementos
-        buttonClose.innerHTML = `<i class="fa-solid fa-trash"></i>`;
-        newLiElement.textContent = task.nomeTask + " 🢒 " + task.categoria;
-
-        buttonClose.addEventListener("click", () => {
-            let searchId = Number(newLiElement.dataset.id); //
-            let objRemove = taskList.findIndex(task => task.id === searchId);
-
-            taskView.removeChild(newLiElement);
-            taskList.splice(objRemove, 1);
-        })
-
-        newLiElement.appendChild(buttonClose); // adiciona o botão dentro da li
-        taskView.appendChild(newLiElement); // desenha a li na tela
-
-        colorPriority(task, newLiElement);
-    });
-
-    console.log(task);
-    console.log(taskList);
+    addTask(task);
 
     modal.style.display = "none";
 
@@ -115,7 +140,10 @@ function createTask() {
     nameTask.value = "";
     category.value = "";
     priority.value = ""; 
-
 }
 
 buttonTask.addEventListener("click", createTask);
+loadTasks();
+
+//depuração     console.log(task);
+//              console.log(taskList);
