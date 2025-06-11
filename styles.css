@@ -69,39 +69,37 @@ body {
     margin: 0 20px;
 }
 
-#iconMais {
-    font-size: 15px;
-}
-
 .search {
     padding: 0 1em;
+    cursor: pointer;
+}
+
+.search i {
+    color: var(--cor-white);
 }
 
 .buttonsHeader {
     padding: 0 1em;
+    cursor: pointer;
+    color: var(--cor-white);
 }
 
 .buttonsHeader a, i {
     text-decoration: none;
-    color: #000000;
+    color: var(--cor-primaria);
     font-size: 15px;
     padding: 0 10px;
 }
 
 .buttonsHeader a{
-    background: #f5f2f1;
+    background: var(--cor-white);
     padding: 10px 20px;
-    border-radius: 15px;
-    transition: .5s;
+    border-radius: 10px;
+    transition: 1s;
 }
 
 .buttonsHeader a:hover {
-    background: #c79d15;
-    border-radius: 15px;
-}
-
-#iconEmail {
-    font-size: 25px;
+    border-radius: 25px;
 }
 
 .modal {
@@ -113,11 +111,12 @@ body {
 }
 
 .modalConteudo {
-  background: white;
+  background: var(--cor-secundaria);
   margin: 15% auto;
   padding: 20px;
   width: 300px;
   border-radius: 30px;
+  box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.7);
 }
 
 .close {
@@ -125,9 +124,12 @@ body {
   cursor: pointer;
 }
 
+.close i {
+    color: var(--cor-white);
+}
+
 .taskInput {
-    border-radius: 30px;
-    background: #fff;
+    border-radius: 60px;
     text-align: center;
     padding: 30px;
 }
