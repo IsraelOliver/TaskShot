@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root {
     --cor-primaria: #1e1e1e;
     --cor-secundaria: #262626;
@@ -11,12 +13,14 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: "Exo 2", sans-serif;
 }
 
 body {
     background: var(--cor-primaria);
 }
+
+/*---- SIDEBAR ----*/
 
 .sidebar {
     background: var(--cor-secundaria);
@@ -41,6 +45,8 @@ body {
     margin: 10px 0;
 }
 
+/*---- HEADER ----*/
+
 .header {
     position: fixed;
     top: 0;
@@ -60,54 +66,49 @@ body {
   width: calc(100% - 300px);
 }
 
-.header input {
-    border: none;
-    border-radius: 10px;
-    width: 20em;
-    background: var(--cor-linha-second);
-    padding: 10px 20px;
-    margin: 0 20px;
-}
-
 .search {
-    padding: 0 1em;
-    cursor: pointer;
+    margin: 0 1em;
 }
 
 .search i {
     color: var(--cor-white);
-}
-
-.buttonsHeader {
-    padding: 0 1em;
     cursor: pointer;
-    color: var(--cor-white);
 }
 
-.buttonsHeader a, i {
-    text-decoration: none;
-    color: var(--cor-primaria);
-    font-size: 15px;
-    padding: 0 10px;
-}
-
-.buttonsHeader a{
-    background: var(--cor-white);
+.search input {
+    margin: 0 20px;
+    border: none;
+    border-radius: 15px;
+    width: 20em;
+    background: var(--cor-linha-second);
     padding: 10px 20px;
+}
+
+.buttonsHeader a {
+    text-decoration: none;
+    color: var(--cor-linha-second);
+    font-size: 15px;
+    padding: 10px 20px;
+    background: var(--cor-white);
     border-radius: 10px;
-    transition: 1s;
+    transition: .5s;
+    margin: 0 2em;
 }
 
 .buttonsHeader a:hover {
+    background: var(--cor-detalhe);
     border-radius: 25px;
+    color: var(--cor-white);
 }
+
+/*---- ADICIONAR TAREFA ----*/
 
 .modal {
   display: none;
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.6);
 }
 
 .modalConteudo {
@@ -116,7 +117,6 @@ body {
   padding: 20px;
   width: 300px;
   border-radius: 30px;
-  box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.7);
 }
 
 .close {
@@ -126,10 +126,17 @@ body {
 
 .close i {
     color: var(--cor-white);
+    border-radius: 25px;
+    padding: 0 2px;
+    transition: .2s;
+}
+
+.close i:hover {
+    background: var(--cor-detalhe);
 }
 
 .taskInput {
-    border-radius: 60px;
+    border-radius: 30px;
     text-align: center;
     padding: 30px;
 }
@@ -140,56 +147,58 @@ body {
 
 .task-name input {
     padding: 10px 5px;
-    border: 1px solid #000;
-    border-radius: 5px;
+    border: none;
+    border-radius: 15px;
     text-align: center;
+    background: var(--cor-linha-second);
 }
 
 .task-category {
-    margin: 10px;
+    margin: 20px 10px;
 }
 
 .task-category h2 {
     font-size: 15px;
     margin-bottom: 5px;
+    color: var(--cor-white);
 }
 
 .task-category select {
-    border: 1px solid #c79d15;
+    border: none;
+    border-radius: 5px;
+    background: var(--cor-linha-second);
     padding: 0 1em;
 }
 
 .task-priority {
-    margin: 15px;
+    margin: 20px 10px;
 }
 
 .task-priority h2 {
     font-size: 15px;
     margin-bottom: 5px;
+    color: var(--cor-white);
 }
 
 .task-priority select {
-    border: 1px solid #c79d15;
+    border: none;
+    border-radius: 5px;
+    background: var(--cor-linha-second);
     padding: 0 1em;
 }
 
-.task-button {
-    margin: 10px;
-}
-
-.task-button button {
-    padding: 5px 10px;
-    border: 2px solid #c79d15;
+#buttonTask {
+    padding: 10px 30px;
+    border: none;
     border-radius: 10px;
-    background: #fff;
+    background: var(--cor-detalhe);
+    color: var(--cor-white);
+    font-weight: bold;
     transition: .3s;
     cursor: pointer;
 }
 
-.task-button button:hover {
-    background-color: #c79d15;
-    color: #fff;
-}
+/*---- LAYOUT DAS TAREFAS ----*/
 
 .task-list {
     transition: margin-left .2s, width .2s;
