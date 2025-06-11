@@ -93,11 +93,13 @@ function renderTasks() {
         // Adicionando Classes
         newLiElement.classList.add("taskText")
         buttonClose.classList.add("trash");
+
+
         newLiElement.dataset.id = task.id;
         
         //Adicionando conteudo aos elementos
-        buttonClose.innerHTML = `<i class="fa-solid fa-trash"></i>`;
         newLiElement.textContent = task.nomeTask + " 🢒 " + task.categoria;
+        buttonClose.innerHTML = `<i class="fa-solid fa-trash"></i>`;
 
         //Botão de excluir uma tarefa
         buttonClose.addEventListener("click", () => {
@@ -131,15 +133,13 @@ function createTask() {
     }
 
     if (!taskValidation(task)) return;
-
     addTask(task);
 
-    modal.style.display = "none";
-
-    //Limpa os campos
+    //Limpa os campos e fecha o modal de tarefa
     nameTask.value = "";
     category.value = "";
-    priority.value = ""; 
+    priority.value = "";
+    modal.style.display = "none";
 }
 
 buttonTask.addEventListener("click", createTask);

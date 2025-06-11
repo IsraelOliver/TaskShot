@@ -243,12 +243,12 @@ body {
     float: right;
     cursor: pointer;
     font-size: 13px;
-    color: var(--cor-linha-second);
+    color: var(--cor-detalhe-second);
     transition: .3s;
 }
 
 .trash i:hover {
-    color: var(--cor-linha);
+    color: var(--cor-detalhe);
 }
 
 .task-list.shifted {
