@@ -194,6 +194,7 @@ body {
     background: var(--cor-detalhe);
     color: var(--cor-white);
     font-weight: bold;
+    font-size: 15px;
     transition: .3s;
     cursor: pointer;
 }

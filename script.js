@@ -5,7 +5,7 @@ let priority = document.getElementById("priorityTask");
 let buttonTask = document.getElementById("buttonTask");
 
 //Modal
-let modal = document.getElementById("myModal");
+let modal = document.querySelector(".modal");
 let openTask = document.getElementById("openTask");
 let closeTask = document.querySelector(".close");
 
@@ -105,6 +105,12 @@ function renderTasks() {
         buttonClose.addEventListener("click", () => {
             let searchId = Number(newLiElement.dataset.id); //
             let objRemove = taskList.findIndex(task => task.id === searchId);
+
+            if (objRemove !== -1) {
+                taskList.splice(objRemove, 1);
+                saveTasks();
+                renderTasks();
+            }
 
             taskView.removeChild(newLiElement);
             taskList.splice(objRemove, 1);
