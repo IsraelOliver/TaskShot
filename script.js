@@ -44,8 +44,7 @@ function colorPriority(task, element) {
     let priorityColor = {
         P1: "#e71223",
         P2: "#ff7b22",
-        P3: "#368c09",
-        P4: "#525252"
+        P3: "#368c09"
     }
 
     let color = priorityColor[task.prioridade];
