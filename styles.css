@@ -153,23 +153,6 @@ body {
     background: var(--cor-linha-second);
 }
 
-.task-category {
-    margin: 20px 10px;
-}
-
-.task-category h2 {
-    font-size: 15px;
-    margin-bottom: 5px;
-    color: var(--cor-white);
-}
-
-.task-category select {
-    border: none;
-    border-radius: 5px;
-    background: var(--cor-linha-second);
-    padding: 0 1em;
-}
-
 .task-priority {
     margin: 20px 10px;
 }

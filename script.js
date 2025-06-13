@@ -1,6 +1,5 @@
 //Adicionar tarefa
 let nameTask = document.getElementById("nameTask");
-let category = document.getElementById("categoryTask");
 let priority = document.getElementById("priorityTask");
 let buttonTask = document.getElementById("buttonTask");
 
@@ -43,24 +42,16 @@ window.onclick = (evento) => {
 //Condições de prioridades por cores
 function colorPriority(task, element) {
     if (task.prioridade == "Baixa") {
-        // Adicionar destaque de prioridade
+        // Adicionar destaque de prioridade #368c09
     }
 
     if (task.prioridade == "Média") {
-        // Adicionar destaque de prioridade
+        // Adicionar destaque de prioridade #ff7b22
     }
 
     if (task.prioridade == "Alta") {
-        // Adicionar destaque de prioridade
+        // Adicionar destaque de prioridade #e71223
     }
-}
-
-//Validação dos elementos "SELECT"
-function taskValidation(task) {
-    return (task.categoria !== "Selecionar" &&
-        task.categoria !== "" &&
-        task.prioridade !== "Selecionar" &&
-        task.prioridade !== "")
 }
 
 //Criação de um array vazio
@@ -94,11 +85,10 @@ function renderTasks() {
         newLiElement.classList.add("taskText")
         buttonClose.classList.add("trash");
 
-
         newLiElement.dataset.id = task.id;
         
         //Adicionando conteudo aos elementos
-        newLiElement.textContent = task.nomeTask + " 🢒 " + task.categoria;
+        newLiElement.textContent = task.nomeTask;
         buttonClose.innerHTML = `<i class="fa-solid fa-trash"></i>`;
 
         //Botão de excluir uma tarefa
@@ -113,10 +103,9 @@ function renderTasks() {
             }
 
             taskView.removeChild(newLiElement);
-            taskList.splice(objRemove, 1);
         })
-        newLiElement.appendChild(buttonClose); // adiciona o botão dentro da li
 
+        newLiElement.appendChild(buttonClose); // adiciona o botão dentro da li
         taskView.appendChild(newLiElement); // Desenha o novo item da lista (nova tarefa)
 
         colorPriority(task, newLiElement);
@@ -134,16 +123,13 @@ function createTask() {
     let task = {
         id: Date.now(),
         nomeTask: nameTask.value,
-        categoria: category.value,
         prioridade: priority.value
     }
 
-    if (!taskValidation(task)) return;
     addTask(task);
 
     //Limpa os campos e fecha o modal de tarefa
     nameTask.value = "";
-    category.value = "";
     priority.value = "";
     modal.style.display = "none";
 }
