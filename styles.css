@@ -170,6 +170,18 @@ body {
     padding: 0 1em;
 }
 
+#priority1 {
+    color: #e71223;
+}
+
+#priority2 {
+    color: #ff7b22;
+}
+
+#priority3 {
+    color: #368c09;
+}
+
 #buttonTask {
     padding: 10px 30px;
     border: none;

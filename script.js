@@ -41,16 +41,16 @@ window.onclick = (evento) => {
 
 //Condições de prioridades por cores
 function colorPriority(task, element) {
-    if (task.prioridade == "Baixa") {
-        // Adicionar destaque de prioridade #368c09
+    let priorityColor = {
+        P1: "#e71223",
+        P2: "#ff7b22",
+        P3: "#368c09",
+        P4: "#525252"
     }
 
-    if (task.prioridade == "Média") {
-        // Adicionar destaque de prioridade #ff7b22
-    }
-
-    if (task.prioridade == "Alta") {
-        // Adicionar destaque de prioridade #e71223
+    let color = priorityColor[task.prioridade];
+    if (color) {
+        element.style.borderLeft = `2px solid ${color}`;
     }
 }
 
