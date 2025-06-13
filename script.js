@@ -78,21 +78,31 @@ function renderTasks() {
     taskList.forEach(task => {
         // Criando elementos
         let newLiElement = document.createElement("li");
+        let buttonEdit = document.createElement("button")
         let buttonClose = document.createElement("button");
+        let editGroup = document.createElement("div")
 
         // Adicionando Classes
         newLiElement.classList.add("taskText")
-        buttonClose.classList.add("trash");
 
+        editGroup.classList.add("editGroup")
+        buttonEdit.classList.add("edit")
+        buttonClose.classList.add("trash")
+
+        buttonEdit.classList.add("editButton");
+        buttonClose.classList.add("editButton");
+
+        //id do elemento
         newLiElement.dataset.id = task.id;
         
         //Adicionando conteudo aos elementos
         newLiElement.textContent = task.nomeTask;
+        buttonEdit.innerHTML = `<i class="fa-solid fa-pen"></i>`
         buttonClose.innerHTML = `<i class="fa-solid fa-trash"></i>`;
 
         //Botão de excluir uma tarefa
         buttonClose.addEventListener("click", () => {
-            let searchId = Number(newLiElement.dataset.id); //
+            let searchId = Number(newLiElement.dataset.id); 
             let objRemove = taskList.findIndex(task => task.id === searchId);
 
             if (objRemove !== -1) {
@@ -104,7 +114,9 @@ function renderTasks() {
             taskView.removeChild(newLiElement);
         })
 
-        newLiElement.appendChild(buttonClose); // adiciona o botão dentro da li
+        editGroup.appendChild(buttonEdit); // adicina o botaodit
+        editGroup.appendChild(buttonClose);
+        newLiElement.appendChild(editGroup); // adiciona o div
         taskView.appendChild(newLiElement); // Desenha o novo item da lista (nova tarefa)
 
         colorPriority(task, newLiElement);

@@ -115,8 +115,8 @@ body {
   background: var(--cor-secundaria);
   margin: 15% auto;
   padding: 20px;
-  width: 300px;
-  border-radius: 30px;
+  width: 250px;
+  border-radius: 10px;
 }
 
 .close {
@@ -138,7 +138,7 @@ body {
 .taskInput {
     border-radius: 30px;
     text-align: center;
-    padding: 30px;
+    padding: 20px 0;
 }
 
 .task-name {
@@ -174,11 +174,11 @@ body {
     color: #e71223;
 }
 
-#priority2 {
+#priority2 span{
     color: #ff7b22;
 }
 
-#priority3 {
+#priority3 span{
     color: #368c09;
 }
 
@@ -228,15 +228,29 @@ body {
     border: 1px solid var(--cor-linha);
 }
 
-.trash {
+.taskText {
+    display: flex;
+    justify-content: space-between;
+}
+
+.editButton {
     margin-top: 6px;
     border: none;
     background: none;
-    float: right;
+    margin: 0 5px;
+}
+
+.edit i {
+    cursor: pointer;
+    font-size: 13px;
+    color: var(--cor-linha-second);
+    transition: .3s;
+}
+.edit i:hover {
+    color: var(--cor-linha);
 }
 
 .trash i {
-    float: right;
     cursor: pointer;
     font-size: 13px;
     color: var(--cor-detalhe-second);
