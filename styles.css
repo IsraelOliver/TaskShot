@@ -163,23 +163,40 @@ body {
     color: var(--cor-white);
 }
 
-.task-priority select {
-    border: none;
-    border-radius: 5px;
-    background: var(--cor-linha-second);
-    padding: 0 1em;
+.task-priority input {
+    appearance: none;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    transition: .2s linear;
+    margin-top: 10px;
 }
 
-#priority1 {
-    color: #e71223;
+#taskP1 {
+    border: 1px solid #e71223;
 }
 
-#priority2 span{
-    color: #ff7b22;
+#taskP2 {
+    border: 1px solid #ff7b22;
 }
 
-#priority3 span{
-    color: #368c09;
+#taskP3 {
+    border: 1px solid #368c09;
+}
+
+#taskP1:checked {
+    border: 2px solid #e71223;
+    background: rgba(231, 18, 35, 0.5);
+}
+
+#taskP2:checked {
+    border: 2px solid #ff7b22;
+    background: rgba(255, 123, 34, 0.5);
+}
+
+#taskP3:checked {
+    border: 2px solid #368c09;
+    background: rgba(54, 140, 9, 0.5);
 }
 
 #buttonTask {

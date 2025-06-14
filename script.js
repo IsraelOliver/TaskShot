@@ -1,6 +1,5 @@
 //Adicionar tarefa
 let nameTask = document.getElementById("nameTask");
-let priority = document.getElementById("priorityTask");
 let buttonTask = document.getElementById("buttonTask");
 
 //Modal
@@ -131,17 +130,19 @@ function addTask(task) {
 
 //Criação da tarefa
 function createTask() {
+    let priority = document.querySelector('input[name="priority"]:checked');
+
     let task = {
         id: Date.now(),
         nomeTask: nameTask.value,
-        prioridade: priority.value
+        prioridade: priority ? priority.value : ""
     }
 
     addTask(task);
 
     //Limpa os campos e fecha o modal de tarefa
     nameTask.value = "";
-    priority.value = "";
+    if (priority) priority.checked = false;
     modal.style.display = "none";
 }
 
