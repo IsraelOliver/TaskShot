@@ -7,6 +7,9 @@ let modal = document.querySelector(".modal");
 let openTask = document.getElementById("openTask");
 let closeTask = document.querySelector(".close");
 
+let modalEdit = document.querySelector(".modalEdit")
+let closeEdit = document.querySelector(".closeEdit");
+
 //Sidebar
 let toggleButton = document.getElementById("toggleButton");
 let sidebar = document.querySelector(".sidebar");
@@ -26,16 +29,26 @@ openTask.onclick = () => {
 }
 
 closeTask.onclick = () => {
-  modal.style.display = "none";
+    modal.style.display = "none";
+};
+
+closeEdit.onclick = () => {
+    modalEdit.style.display = "none";
 };
 
 window.onclick = (evento) => {
-  if (evento.target === modal) {
-    modal.style.display = "none";
-  }
+    if (evento.target === modal) {
+        modal.style.display = "none";
+    }
+
+    if (evento.target === modalEdit) {
+        modalEdit.style.display = "none";
+    }
 };
 
-
+//Modal para edição de tarefa
+function openEdit() {
+}
 
 // ---- DIVISÃO ---- //
 // ---- DIVISÃO ---- //
@@ -114,6 +127,10 @@ function renderTasks() {
 
             taskView.removeChild(newLiElement);
         })
+
+        buttonEdit.onclick = () => {
+            modalEdit.style.display = "block"
+        }
 
         editGroup.appendChild(buttonEdit); // adicina o botaodit
         editGroup.appendChild(buttonClose);

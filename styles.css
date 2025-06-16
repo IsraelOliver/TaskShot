@@ -298,3 +298,27 @@ body {
     margin-left: 300px;
     width: calc(100% - 300px);
 }
+
+.modalEdit {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.closeEdit {
+  float: right;
+  cursor: pointer;
+}
+
+.closeEdit i {
+    color: var(--cor-white);
+    border-radius: 25px;
+    padding: 0 2px;
+    transition: .2s;
+}
+
+.closeEdit i:hover {
+    background: var(--cor-detalhe);
+}
