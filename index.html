@@ -43,12 +43,11 @@
 
                 <div class="task-priority">
                     <h2>Prioridade</h2>
-                    <input type="radio" id="taskP1" name="priority" value="P1">
-                    <label for="task-radio">P1</label>
-                    <input type="radio" id="taskP2" name="priority" value="P2">
-                    <label for="task-radio1">P2</label>
-                    <input type="radio" id="taskP3" name="priority" value="P3">
-                    <label for="task-radio2">P3</label>
+                    <div class="task-priority_container">
+                        <label for="task-radio"><input type="radio" id="taskP1" name="priority" value="P1"> P1</label>
+                        <label for="task-radio1"><input type="radio" id="taskP2" name="priority" value="P2"> P2</label> 
+                        <label for="task-radio2"><input type="radio" id="taskP3" name="priority" value="P3"> P3</label>
+                    </div>
                 </div>
 
                 <button id="buttonTask">Adicionar</button>
@@ -59,6 +58,15 @@
     <div class="task-list">
         <ul id="taskView">
         </ul>
+    </div>
+    
+    <div class="modal">
+        <div class="modalConteudoEdit">
+            Titulo
+            Linha horizontal
+            Linha vertical na direita
+            conteudo
+        </div>
     </div>
     <script src="./script.js"></script>
 </body>

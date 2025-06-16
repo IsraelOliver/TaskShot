@@ -35,6 +35,8 @@ window.onclick = (evento) => {
   }
 };
 
+
+
 // ---- DIVISÃO ---- //
 // ---- DIVISÃO ---- //
 
