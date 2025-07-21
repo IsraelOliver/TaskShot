@@ -23,7 +23,7 @@ toggleButton.addEventListener('click', () => {
     taskContent.classList.toggle('shifted');
 });
 
-// Model para adicionar tarefa
+// Modal para adicionar tarefa
 openTask.onclick = () => {
     modal.style.display = "block";
 }
@@ -45,10 +45,6 @@ window.onclick = (evento) => {
         modalEdit.style.display = "none";
     }
 };
-
-//Modal para edição de tarefa
-function openEdit() {
-}
 
 // ---- DIVISÃO ---- //
 // ---- DIVISÃO ---- //
@@ -81,10 +77,12 @@ function loadTasks() {
     }
 }
 
+// Salva as tarefas no localStorage
 function saveTasks() {
     localStorage.setItem("taskList", JSON.stringify(taskList));
 }
 
+// Renderiza as tarefas
 function renderTasks() {
     let taskView = document.getElementById("taskView");
     taskView.textContent = ""
@@ -163,6 +161,10 @@ function createTask() {
     nameTask.value = "";
     if (priority) priority.checked = false;
     modal.style.display = "none";
+}
+
+function editTask() {
+
 }
 
 buttonTask.addEventListener("click", createTask);
