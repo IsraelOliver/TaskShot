@@ -171,7 +171,6 @@ body {
     width: 100%;
     font-size: 22px;
     font-weight: bold;
-    text-align: center;
     background: transparent;
     border: none;
     color: var(--cor-white);
@@ -181,7 +180,6 @@ body {
 
 .edit-title::placeholder {
     color: var(--cor-linha);
-    text-align: center;
 }
 
 .task-description {
@@ -204,6 +202,10 @@ body {
     color: var(--cor-white);
 }
 
+.task-priorityAdd {
+    margin-top: 20px;
+}
+
 .task-priorityEdit {
     margin: 0 10px;
     padding: 5px;
@@ -221,7 +223,7 @@ body {
 
 .task-priority_containerAdd {
     flex-direction: row;
-    margin: 20px 0;
+    margin: 5px 0;
 }
 
 .task-priority input[type="radio"] {
@@ -261,6 +263,7 @@ body {
     font-size: 15px;
     transition: .3s;
     cursor: pointer;
+    margin-top: 20px;
 }
 
 .buttonEdit {
@@ -277,6 +280,7 @@ body {
 
 .buttonEdit:hover {
     background: var(--cor-detalhe);
+    font-weight: bold;
 }
 
 /* Tarefas */
