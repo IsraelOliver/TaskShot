@@ -15,5 +15,5 @@ PROXIMAS TAREFAS PARA ESTE PROJETO.
         - Separar o css em arquivos menores
         - Usar uma metodologia de nomenclatura BEM
         - Evitar seletores genéricos ou muito profundos
-        - Usar variáveis CSS (Custom Properties)
+        - Usar variáveis CSS (Custom Properties)l
         - Utilizar pré-processadores (opcional) - futuramente talvez
