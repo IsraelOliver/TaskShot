@@ -1,8 +1,10 @@
-# 🗂️ TaskSort
+# TaskSort
 
-Um gerenciador de tarefas simples, funcional e visualmente organizado, feito com **HTML**, **CSS** e **JavaScript puro**.
+Um gerenciador de tarefas simples, funcional e visualmente organizado, feito com **HTML**, **CSS** e **JavaScript**. (Ainda em andamento)
 
-## ✨ Funcionalidades
+Veja como está: 
+
+## Funcionalidades
 
 - Criar tarefas com **prioridades visuais** (P1, P2, P3).
 - Interface moderna com **tema escuro**.
@@ -11,14 +13,14 @@ Um gerenciador de tarefas simples, funcional e visualmente organizado, feito com
 - Exclusão e edição dinâmica das tarefas.
 - Sidebar interativa e responsiva.
 
-## 🧠 Tecnologias usadas
+## Tecnologias usadas
 
 - HTML5
 - CSS3 (com variáveis e responsividade)
 - JavaScript puro (manipulação de DOM)
 - Font Awesome para ícones
 
-## 🚀 Como executar
+## Como executar
 
 1. Clone o repositório:
 ```bash
