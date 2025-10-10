@@ -15,7 +15,7 @@
         <h1>TaskShot</h1>
         <ul class="menu">
             <li><i class="fa-solid fa-list"></i> Todas</li>
-            <li><i class="fa-solid fa-star"></i> Prioridade 1</li>
+            <li><i class="fa-solid fa-star"></i> Favoritas</li>
             <li><i class="fa-solid fa-clock"></i> Pendentes</li>
             <li><i class="fa-solid fa-check"></i> Concluídas</li>
             <li><i class="fa-solid fa-gear"></i> Configurações</li>
@@ -28,25 +28,24 @@
             <input type="search" id="site-search" placeholder="Procurar">
         </div>
         <div class="buttonsHeader">
-            <a href="#" id="openTask">TAREFA</a>
+            <a href="#" id="openTask">TAREFA <i class="fa fa-plus" aria-hidden="true"></i></a>
         </div>
     </div>
 
-    <div class="modal">
-        <div class="modalConteudo">
-            <span class="close"><i class="fa-solid fa-xmark"></i></span>
+    <div class="modal modal-add">
+        <div class="modalConteudo modalConteudoAdd">
+            <span class="close close-add"><i class="fa-solid fa-xmark"></i></span>
             <div class="taskInput">
-
                 <div class="task-name">
                     <input type="text" id="nameTask" placeholder="nome da tarefa">
                 </div>
 
-                <div class="task-priority">
+                <div class="task-priority task-priorityAdd">
                     <h2>Prioridade</h2>
-                    <div class="task-priority_container">
-                        <label for="task-radio"><input type="radio" id="taskP1" name="priority" value="P1"> P1</label>
-                        <label for="task-radio1"><input type="radio" id="taskP2" name="priority" value="P2"> P2</label> 
-                        <label for="task-radio2"><input type="radio" id="taskP3" name="priority" value="P3"> P3</label>
+                    <div class="task-priority_container task-priority_containerAdd">
+                        <label><input type="radio" id="taskP1" name="priority" value="P1"> P1</label>
+                        <label><input type="radio" id="taskP2" name="priority" value="P2"> P2</label> 
+                        <label><input type="radio" id="taskP3" name="priority" value="P3"> P3</label>
                     </div>
                 </div>
 
@@ -56,28 +55,33 @@
     </div>
 
     <div class="task-list">
-        <ul id="taskView">
-        </ul>
+        <ul id="taskView"></ul>
     </div>
-    
-    <div class="modalEdit">
-        <div class="modalConteudo">
-            <span class="closeEdit"><i class="fa-solid fa-xmark"></i></span>
-            Titulo
-            Linha horizontal
-            Linha vertical na direita
-            <div>
-                <h2>Prioridade</h2>
-                <div class="task-priority_container">
-                    <label for="task-radio0"><input type="radio" id="taskP1" name="editPriority" value="P1"> P1</label>
-                    <label for="task-radio1"><input type="radio" id="taskP2" name="editPriority" value="P2"> P2</label> 
-                    <label for="task-radio2"><input type="radio" id="taskP3" name="editPriority" value="P3"> P3</label>
-                    <label for="task-radio2"><input type="radio" id="taskP4" name="editPriority" value="P4"> P4</label>
+
+    <div class="modal modal-edit">
+        <div class="modalConteudo modalConteudoEdit">
+            <span class="close close-edit"><i class="fa-solid fa-xmark"></i></span>
+            <input type="text" id="editTitle" class="edit-title" placeholder="Título da tarefa">
+            <hr>
+            <div class="modalConteudo_Div">
+                <div class="task-description">
+                    <h2>Descrição</h2>
+                    <textarea id="descricao" placeholder="descrição..."></textarea>
+                    <button class="buttonEdit" id="saveEdit">Salvar</button>
+                </div>
+                <div class="task-priority task-priorityEdit">
+                    <h2>Prioridade</h2>
+                    <div class="task-priority_container task-priority_containerEdit">
+                        <label><input type="radio" id="editP1" name="editPriority" value="P1"> P1</label>
+                        <label><input type="radio" id="editP2" name="editPriority" value="P2"> P2</label> 
+                        <label><input type="radio" id="editP3" name="editPriority" value="P3"> P3</label>
+                        <label><input type="radio" id="editP4" name="editPriority" value="P4"> P4</label>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
     <script src="./script.js"></script>
 </body>
-
 </html>

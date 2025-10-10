@@ -8,32 +8,31 @@
     --cor-linha: #6b6b6b;
     --cor-linha-second: #525252;
     --cor-white: #fff;
+
+    --p1: #e71223;
+    --p2: #ff7b22;
+    --p3: #368c09;
+    --p4: #6b6b6b;
 }
 
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     font-family: "Exo 2", sans-serif;
 }
 
 body {
     background: var(--cor-primaria);
+    color: var(--cor-white);
 }
 
-/*---- SIDEBAR ----*/
-
+/* Sidebar */
 .sidebar {
     background: var(--cor-secundaria);
+    position: fixed; inset: 0 auto 0 0;
+    width: 0; overflow: hidden; transition: .2s; z-index: 1000;
     text-align: center;
-    position: fixed;
-    width: 0;
-    top: 0;
-    left: 0;
-    overflow: hidden;
-    transition: .2s;
-    z-index: 1000;
-    height: 100vh;
-    color: var(--cor-white);
 }
 
 .sidebar.open {
@@ -45,25 +44,23 @@ body {
     margin: 10px 0;
 }
 
-/*---- HEADER ----*/
-
+/* Header */
 .header {
     position: fixed;
-    top: 0;
-    left: 0;
-    background: var(--cor-secundaria);
+    inset: 0 0 auto 0;
+    height: 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 60px;
+    background: var(--cor-secundaria);
     width: 100%;
     transition: margin-left .2s, width .2s;
     z-index: 999;
 }
 
 .header.shifted {
-  margin-left: 300px;
-  width: calc(100% - 300px);
+    margin-left: 300px;
+    width: calc(100% - 300px);
 }
 
 .search {
@@ -82,6 +79,7 @@ body {
     width: 20em;
     background: var(--cor-linha-second);
     padding: 10px 20px;
+    color: var(--cor-white);
 }
 
 .buttonsHeader a {
@@ -101,42 +99,57 @@ body {
     color: var(--cor-white);
 }
 
-/*---- ADICIONAR TAREFA ----*/
-
+/* Modal */
 .modal {
-  display: none;
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.6);
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,.6);
 }
 
 .modalConteudo {
-  background: var(--cor-secundaria);
-  margin: 15% auto;
-  padding: 20px;
-  width: 250px;
-  border-radius: 10px;
+    background: var(--cor-secundaria);
+    margin: 15% auto;
+    padding: 20px;
+    width: 250px;
+    border-radius: 10px;
+    border: 1px solid var(--cor-linha);
 }
 
-.close {
-  float: right;
-  cursor: pointer;
+.modalConteudoEdit {
+    width: 500px;
+    height: 280px;
 }
 
-.close i {
+.modalConteudo_Div {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+}
+
+.modalConteudo_Div h2 {
+    font-size: 15px;
+    color: var(--cor-white);
+}
+
+.close, .close-add, .close-edit {
+    float: right;
+    cursor: pointer;
+}
+
+.close i, .close-add i, .close-edit i {
     color: var(--cor-white);
     border-radius: 25px;
-    padding: 0 2px;
     transition: .2s;
+    padding: 0 2px;
 }
 
-.close i:hover {
+.close i:hover, .close-add i:hover, .close-edit i:hover {
     background: var(--cor-detalhe);
 }
 
 .taskInput {
-    border-radius: 30px;
     text-align: center;
     padding: 20px 0;
 }
@@ -148,68 +161,95 @@ body {
 .task-name input {
     padding: 10px 5px;
     border: none;
-    border-radius: 15px;
+    border-radius: 10px;
     text-align: center;
     background: var(--cor-linha-second);
-}
-
-.task-priority {
-    margin: 20px 10px;
-    
-}
-
-.task-priority_container {
-     align-items: center;
-     justify-content: space-around;
-     display: flex;
-     gap: 8px;
-}
-
-.task-priority h2 {
-    font-size: 15px;
-    margin-bottom: 5px;
     color: var(--cor-white);
 }
 
-.task-priority input {
+.edit-title {
+    width: 100%;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    background: transparent;
+    border: none;
+    color: var(--cor-white);
+    outline: none;
+    margin-bottom: 8px;
+}
+
+.edit-title::placeholder {
+    color: var(--cor-linha);
+    text-align: center;
+}
+
+.task-description {
+    margin: 0 10px;
+    padding: 5px;
+    text-align: center;
+}
+
+.task-description h2 {
+    margin-bottom: 10px;
+}
+
+.task-description textarea {
+    width: 320px;
+    height: 100px;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--cor-primaria);
+    color: var(--cor-white);
+}
+
+.task-priorityEdit {
+    margin: 0 10px;
+    padding: 5px;
+    border-left: 1px solid var(--cor-linha);
+    height: 180px;
+}
+
+.task-priority_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 8px;
+    padding: 10px 5px;
+}
+
+.task-priority_containerAdd {
+    flex-direction: row;
+    margin: 20px 0;
+}
+
+.task-priority input[type="radio"] {
     appearance: none;
     border-radius: 50%;
-    width: 14px;
-    height: 14px;
+    width: 14px; height: 14px;
     transition: .1s linear;
-    align-items: center;
-}
-
-#taskP1 {
-    border: 1px solid #e71223;
-}
-
-#taskP2 {
-    border: 1px solid #ff7b22;
-}
-
-#taskP3 {
-    border: 1px solid #368c09;
-}
-
-#taskP1:checked {
-    border: 2px solid #e71223;
-    background: rgba(231, 18, 35, 0.5);
-}
-
-#taskP2:checked {
-    border: 2px solid #ff7b22;
-    background: rgba(255, 123, 34, 0.5);
-}
-
-#taskP3:checked {
-    border: 2px solid #368c09;
-    background: rgba(54, 140, 9, 0.5);
+    display: inline-block; 
+    vertical-align: middle;
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid var(--cor-linha);
 }
 
 .task-priority label {
     color: var(--cor-white);
+    display: flex; gap: 6px;
+    align-items: center;
 }
+
+.task-priority input[value="P1"] { border-color: var(--p1); }
+.task-priority input[value="P2"] { border-color: var(--p2); }
+.task-priority input[value="P3"] { border-color: var(--p3); }
+
+.task-priority input[value="P1"]:checked { border-width: 2px; background: color-mix(in srgb, var(--p1) 50%, transparent); }
+.task-priority input[value="P2"]:checked { border-width: 2px; background: color-mix(in srgb, var(--p2) 50%, transparent); }
+.task-priority input[value="P3"]:checked { border-width: 2px; background: color-mix(in srgb, var(--p3) 50%, transparent); }
+.task-priority input[value="P4"]:checked { border-width: 2px; background: color-mix(in srgb, var(--p4) 50%, transparent); }
 
 #buttonTask {
     padding: 10px 30px;
@@ -223,16 +263,36 @@ body {
     cursor: pointer;
 }
 
-/*---- LAYOUT DAS TAREFAS ----*/
+.buttonEdit {
+    margin-top: 5px;
+    border: none;
+    background: var(--cor-detalhe-second);
+    color: var(--cor-white);
+    padding: 10px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: .4s;
+}
 
-.task-list {
-    transition: margin-left .2s, width .2s;
+.buttonEdit:hover {
+    background: var(--cor-detalhe);
+}
+
+/* Tarefas */
+.task-list { transition: margin-left .2s,width .2s;
     width: 100%;
     margin-top: 60px;
 }
 
+.task-list.shifted {
+    margin-left: 300px;
+    width: calc(100% - 300px);
+}
+
 #taskView {
     display: flex;
+    flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
     flex-wrap: wrap;
@@ -242,83 +302,58 @@ body {
 
 #taskView li {
     padding: 10px;
-    border-radius: 8px;
+    border-radius: 5px;
     border: 1px solid var(--cor-linha-second);
     width: 15rem;
     margin: 0 10px 15px;
-    align-items: center;
     text-align: left;
-    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.4);
+    align-items: center;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,.4);
     color: var(--cor-white);
     transition: .3s;
 }
 
 #taskView li:hover {
-    border: 1px solid var(--cor-linha);
+    border-color: var(--cor-linha);
 }
 
 .taskText {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    gap: 8px;
 }
 
 .editGroup {
     display: flex;
+    gap: 6px;
 }
 
 .editButton {
-    margin-top: 6px;
     border: none;
     background: none;
-    margin: 0 5px;
+    cursor: pointer;
+    padding: 4px;
 }
 
 .edit i {
-    cursor: pointer;
     font-size: 13px;
     color: var(--cor-linha-second);
     transition: .3s;
+    cursor: pointer;
 }
+
 .edit i:hover {
     color: var(--cor-white);
 }
 
 .trash i {
-    cursor: pointer;
     font-size: 13px;
     color: var(--cor-detalhe-second);
     transition: .3s;
+    cursor: pointer;
 }
 
 .trash i:hover {
     color: var(--cor-detalhe);
-}
-
-.task-list.shifted {
-    margin-left: 300px;
-    width: calc(100% - 300px);
-}
-
-.modalEdit {
-  display: none;
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-}
-
-.closeEdit {
-  float: right;
-  cursor: pointer;
-}
-
-.closeEdit i {
-    color: var(--cor-white);
-    border-radius: 25px;
-    padding: 0 2px;
-    transition: .2s;
-}
-
-.closeEdit i:hover {
-    background: var(--cor-detalhe);
 }
