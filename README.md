@@ -2,7 +2,7 @@
 
 Um gerenciador de tarefas simples, funcional e visualmente organizado, feito com **HTML**, **CSS** e **JavaScript**. (Ainda em andamento)
 
-Veja como está: 
+Veja como está: ![preview do projeto](https://raw.githubusercontent.com/IsraelOliver/TaskShot/main/assets/demo.gif)
 
 ## Funcionalidades
 
