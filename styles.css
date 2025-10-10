@@ -30,9 +30,31 @@ body {
 /* Sidebar */
 .sidebar {
     background: var(--cor-secundaria);
-    position: fixed; inset: 0 auto 0 0;
-    width: 0; overflow: hidden; transition: .2s; z-index: 1000;
+    position: fixed;
+    inset: 0 auto 0 0;
+    width: 0;
+    overflow: hidden;
+    transition: .2s;
+    z-index: 1000;
+}
+
+.sidebar h1 {
     text-align: center;
+}
+
+.linhaSidebar {
+    width: 90%;
+    margin: auto;
+    border: 1px solid var(--cor-linha);
+}
+
+.menu {
+    padding: 10px 30px;
+    list-style: none;
+}
+
+.menu i {
+    padding-right: 5px;
 }
 
 .sidebar.open {
@@ -103,8 +125,10 @@ body {
 .modal {
     display: none;
     position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background: rgba(0,0,0,.6);
 }
 
@@ -229,7 +253,8 @@ body {
 .task-priority input[type="radio"] {
     appearance: none;
     border-radius: 50%;
-    width: 14px; height: 14px;
+    width: 14px;
+    height: 14px;
     transition: .1s linear;
     display: inline-block; 
     vertical-align: middle;
@@ -240,7 +265,8 @@ body {
 
 .task-priority label {
     color: var(--cor-white);
-    display: flex; gap: 6px;
+    display: flex;
+    gap: 6px;
     align-items: center;
 }
 
