@@ -17,7 +17,7 @@ Veja como está: ![preview do projeto](https://raw.githubusercontent.com/IsraelO
 
 - HTML5
 - CSS3 (com variáveis e responsividade)
-- JavaScript puro (manipulação de DOM)
+- JavaScript (manipulação de DOM)
 - Font Awesome para ícones
 
 ## Como executar
