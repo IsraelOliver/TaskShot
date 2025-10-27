@@ -1,4 +1,4 @@
-# TaskSort
+# TaskShot
 
 Um gerenciador de tarefas simples, funcional e visualmente organizado, feito com **HTML**, **CSS** e **JavaScript**. (Ainda em andamento)
 
