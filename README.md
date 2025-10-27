@@ -6,7 +6,7 @@ Veja como está: ![preview do projeto](https://raw.githubusercontent.com/IsraelO
 
 ## Funcionalidades
 
-- Criar tarefas com **prioridades visuais** (P1, P2, P3).
+- Criar tarefas com **prioridades visuais** (P1, P2, P3 e P4).
 - Interface moderna com **tema escuro**.
 - Modal para **criação e edição** de tarefas.
 - Armazenamento local com `localStorage` (mantém as tarefas mesmo após recarregar).
